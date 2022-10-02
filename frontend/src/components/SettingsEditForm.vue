@@ -68,7 +68,10 @@
         }
       },
       removeFormElement(){
-
+        //TODO: Необходимо заменить на систему с id так как при одинаковых лэйблах не будет работать
+        this.store.viewSchema = this.store.viewSchema?.filter(
+          (f) => (f.label !== this.form.label));
+        console.log(temp);
       }
     }
   }

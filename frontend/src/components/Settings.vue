@@ -15,6 +15,7 @@
     <FormKit type="form" v-model="data" @submit="register">
       <FormKitSchema :schema="store.viewSchema" />
     </FormKit>
+    <h2>Form Settings</h2>
     <SettingsEditForm v-for="f in store.settingsSchema" :form=f />
   </div>
 </template>
