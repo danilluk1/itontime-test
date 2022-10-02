@@ -10,7 +10,7 @@
       <input placeholder="Стандартное значение" :value="def" @input="(event: any) => def = event.target.value"/>
     </div>
     <div class="horizontal-layout">
-      <input placeholder="Варианты" :value="variants" @input="(event: any) => variants = event.target.value"/>
+      <input placeholder="Варианты(через пробел)" :value="variants" @input="(event: any) => variants = event.target.value"/>
     </div>
     <div class="horizontal-layout">
       <input type="checkbox" id="isreq" :value="isRequired" @change="(event: any) => isRequired = event.target.checked"/>

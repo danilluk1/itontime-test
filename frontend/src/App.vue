@@ -29,7 +29,6 @@ import { $axios } from "./api";
 
 .wrapper {
   display: flex;
-  width: 100vw;
 
   background-color: blue;
 }

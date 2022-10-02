@@ -34,12 +34,15 @@
       }
     },
     methods: {
+      //Необходимо разбить на два чистых метода
       async getRsvps() {
         this.rsvps = [];
         this.fields = [];
         const sids = (await $axios.get("/settings")).data;
         this.settings = sids;
         const res = (await $axios.get(`/rsvps/${this.displayedSettingsId}`)).data;
+        if(!res) return;
+        
         for(let key in JSON.parse(res[0].data)){
             this.fields.push(key);
         }
@@ -47,7 +50,7 @@
           const json = JSON.parse(el.data);
           this.rsvps.push(json);
         }
-      }
+      },
     },
     components: {
     },

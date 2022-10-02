@@ -29,15 +29,16 @@
       FormKitSchema, FormKit
     },
     methods: {
+      //Необходимо вынести бизнес логику по измению store в state manager
       async register() {
         if(store.settingsId === '') return alert("Сначала необходимо сохранить форму");
 
         try{
-        store.rsvp = (await $axios.post("/rsvps", {
-          schema: store.settingsId,
-          data: this.data,
-        })).data.rsvp;
-        store.viewSchema = JSON.parse(store.rsvp.schema.viewSchema);
+          store.rsvp = (await $axios.post("/rsvps", {
+            schema: store.settingsId,
+            data: this.data,
+          })).data.rsvp;
+          store.viewSchema = JSON.parse(store.rsvp.schema.viewSchema);
         }
         catch(err){
           alert("Ошибка добавления RSVP");
@@ -63,9 +64,6 @@
           alert("Ошибка обновления");
         }
       },
-      async onCompleteRsvp() {
-
-      }
     },
   }
 </script>
